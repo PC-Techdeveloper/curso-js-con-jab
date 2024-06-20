@@ -1,4 +1,4 @@
-// console.log(myName) // ❌ myName is not definde
+// console.log(myName) // ❌ myName is not defined
 
 let color = 'red'
 if (true) {
