@@ -33,3 +33,19 @@ Es un lenguaje de programación que se basa en el tipado dinámico, lo que signi
 ```javascript
 console.log(typeof $firstName)
 ```
+
+## Contenido dinámico en JavaScript:
+
+-- 3 Tipos diferentes de comillas (Single, Double, Backtick)
+
+```javascript
+let name1 = 'JAB'
+let name2 = "JAB"
+let name3 = `JAB`
+
+let age = 18
+
+let result = 'My name is ' + name1 + ' y mi edad es ' + age
+let result2 = "My name is " + name2 + " y mi edad es " + age
+let result3 = `My name is ${name3} y mi edad es ${age}`
+```
