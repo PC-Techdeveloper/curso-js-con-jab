@@ -40,12 +40,30 @@ console.log(typeof $firstName)
 
 ```javascript
 let name1 = 'JAB'
-let name2 = "JAB"
+let name2 = 'JAB'
 let name3 = `JAB`
 
 let age = 18
 
 let result = 'My name is ' + name1 + ' y mi edad es ' + age
-let result2 = "My name is " + name2 + " y mi edad es " + age
+let result2 = 'My name is ' + name2 + ' y mi edad es ' + age
 let result3 = `My name is ${name3} y mi edad es ${age}`
 ```
+
+## Uso de las funciones con la interpolación de strings:
+
+```javascript
+let name = 'Javier'
+let myAge = 18
+let actual = new Date().getFullYear() // <- Date object
+
+function calculateYearOfBirth(miEdad) {
+  return actual - miEdad
+}
+
+let result4 = `My name is ${name} and my age is ${age} years old. I was born in ${calculateYearOfBirth(myAge)}`
+
+console.log(result4) // My name is Javier and my age is 18 years old. I was born in 1994
+```
+
+## Contenido HTML (Contenido dinámico con JavaScript)
