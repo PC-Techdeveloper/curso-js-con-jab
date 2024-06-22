@@ -212,5 +212,6 @@
   "editor.lineHeight": 24,
   "oneDarkPro.bold": true,
   "oneDarkPro.vivid": true,
-  "editor.fontSize": 15
+  "editor.fontSize": 15,
+  "editor.cursorStyle": "block"
 }
