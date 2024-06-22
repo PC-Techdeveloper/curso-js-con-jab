@@ -92,6 +92,8 @@ document.querySelector('body').innerHTML = `
 
 # Manejo del DOM con JavaScript
 
+### SELECCIONAR ELEMENTOS DEL DOM: 
+
 -- MÉTODOS TRADICIONALES DEL DOM:
 
 - getElementById(id) <- Busca el elemento HTML por su id, si no encuentra devuelve Null.
@@ -152,3 +154,5 @@ ELEMENTS.map // <- undefined
 const ELEMENTS = [...document.querySelectorAll('div')]
 ELEMENTS.map // <- f map() { [native code] }
 ```
+
+### CREAR ELEMENTOS DEL DOM: ...
