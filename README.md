@@ -69,3 +69,10 @@ console.log(result4) // My name is Javier and my age is 18 years old. I was born
 ## Contenido HTML (Contenido dinámico con JavaScript)
 -- Contenido dinámico en HTML: InnerHTML sirve para modificar el contenido de un elemento HTML.
 -- querySelctor: Permite seleccionar un elemento HTML en el DOM.
+
+```javascript	
+document.querySelector('body').innerHTML = `
+<div>Mi nombre es <span class="nombre">${name}</span></div>
+<div>Mi edad es <span class="edad">${age}</span></div>
+<img class='img' src="${imagen}" alt="Una foto de Jefferson, laborando en la COMPUTERIA">`
+```
