@@ -52,7 +52,8 @@ let heads = 1;
 let alive = false;
 
 // Operadores Lógicos:
-firstName === 'Jab' && age >= 18 ? console.log('Soy Jab') : console.log('No soy Jab');
+// Ley de precedencia <- Indica el orden de ejecución de los operadores (AND, OR)
+(firstName === 'Jab' || age >= 18) && heads === 1 ? console.log('Soy Jab') : console.log('No soy Jab');
 
 // Cuando se comparan con valores booleanos, no hace falta poner (=== true) o (=== false), es recomendable poner sin el true y en el false con operador de comparación)
 
@@ -60,5 +61,3 @@ firstName === 'Jab' && age >= 18 ? console.log('Soy Jab') : console.log('No soy 
 
 // Cuando son variables sin definir
 let iExist = alive ? 'SI' : 'NO';
-
-// Ley de precedencia <- Indica el orden de ejecución de los operadores
