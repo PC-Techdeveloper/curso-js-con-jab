@@ -177,7 +177,7 @@
   // I only use Prettier for manually formatting
   "prettier.enable": true,
   "prettier.printWidth": 200,
-  "prettier.semi": false,
+  "prettier.semi": true,
   "prettier.singleQuote": true,
   "editor.wordWrap": "on",
   "breadcrumbs.enabled": false,
@@ -209,9 +209,8 @@
   "editor.fontLigatures": true,
   "workbench.sideBar.location": "right",
   "zenMode.fullScreen": true,
-  "editor.lineHeight": 24,
   "oneDarkPro.bold": true,
   "oneDarkPro.vivid": true,
-  "editor.fontSize": 15,
-  "editor.cursorStyle": "line"
+  "editor.fontSize": 14,
+  "editor.cursorStyle": "block"
 }

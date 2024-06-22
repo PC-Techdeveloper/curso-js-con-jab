@@ -31,7 +31,7 @@ Es un lenguaje de programación que se basa en el tipado dinámico, lo que signi
 -- Controlar el tipo de datos de una variable:
 
 ```javascript
-console.log(typeof $firstName)
+console.log(typeof $firstName);
 ```
 
 ## Contenido dinámico en JavaScript:
@@ -39,31 +39,31 @@ console.log(typeof $firstName)
 -- 3 Tipos diferentes de comillas (Single, Double, Backtick)
 
 ```javascript
-let name1 = 'JAB'
-let name2 = 'JAB'
-let name3 = `JAB`
+let name1 = 'JAB';
+let name2 = 'JAB';
+let name3 = `JAB`;
 
-let age = 18
+let age = 18;
 
-let result = 'My name is ' + name1 + ' y mi edad es ' + age
-let result2 = 'My name is ' + name2 + ' y mi edad es ' + age
-let result3 = `My name is ${name3} y mi edad es ${age}`
+let result = 'My name is ' + name1 + ' y mi edad es ' + age;
+let result2 = 'My name is ' + name2 + ' y mi edad es ' + age;
+let result3 = `My name is ${name3} y mi edad es ${age}`;
 ```
 
 ## Uso de las funciones con la interpolación de strings:
 
 ```javascript
-let name = 'Javier'
-let myAge = 18
-let actual = new Date().getFullYear() // <- Date object
+let name = 'Javier';
+let myAge = 18;
+let actual = new Date().getFullYear(); // <- Date object
 
 function calculateYearOfBirth(miEdad) {
-  return actual - miEdad
+  return actual - miEdad;
 }
 
-let result4 = `My name is ${name} and my age is ${age} years old. I was born in ${calculateYearOfBirth(myAge)}`
+let result4 = `My name is ${name} and my age is ${age} years old. I was born in ${calculateYearOfBirth(myAge)}`;
 
-console.log(result4) // My name is Javier and my age is 18 years old. I was born in 1994
+console.log(result4); // My name is Javier and my age is 18 years old. I was born in 1994
 ```
 
 ## Contenido HTML (Contenido dinámico con JavaScript)
@@ -78,21 +78,70 @@ console.log(result4) // My name is Javier and my age is 18 years old. I was born
 document.querySelector('body').innerHTML = `
 <div>Mi nombre es <span class="nombre">${name}</span></div>
 <div>Mi edad es <span class="edad">${age}</span></div>
-<img class='img' src="${imagen}" alt="Una foto de Jefferson, laborando en la COMPUTERIA">`
+<img class='img' src="${imagen}" alt="Una foto de Jefferson, laborando en la COMPUTERIA">`;
 ```
 
-# Operadores y expresiones
+# Operadores y Expresiones
 
 ```javascript
 //Operador de asignación <- =
 //Operadores de asignación compuesta <- +=, -=, *=, /=, %=, **=
 //Incremento y decremento .<- ++, --
-//Operadores de comparación <, >, <=, >=
+//Operadores de comparación <, >, <=, >=, == (Igualdad y compará el valor), === (Extrictamente igual y compará el tipo y el valor), != (Diferente y compará el valor), !== (Extrictamente diferente y compará el tipo y el valor), !(Negación de la comparación)
+
+let numero1 = 5;
+let numero2 = 3;
+console.log((numero1 += numero2));
+console.log(numero1++);
+console.log(numero1--);
+
+console.log(numero1 == numero2);
+console.log(numero1 === numero2);
+console.log(numero1 != numero2);
+console.log(numero1 !== numero2);
+console.log(numero1 > numero2);
+console.log(numero1 < numero2);
+console.log(numero1 >= numero2);
+console.log(numero1 <= numero2);
+```
+
+# Operadores Ternarios: (Condición) ? true : false
+
+# Operadores Lógicos: &&(AND), ||(OR)
+
+```javascript
+let firstName = 'Jacobo';
+let age = 18;
+let heads = 1;
+let alive = false;
+
+//Operadores Lógicos: && - AND, || - OR
+
+/*
+true && true <- true
+true && false <- false
+false && true <- false
+falsae && false <- false
+
+true || true <- true
+true || false <- true
+false || true <- true
+false || false <- false
+*/
+
+firstName === 'Jab' && age >= 18 ? console.log('Soy Jab') : console.log('No soy Jab');
+
+// Cuando se comparan con valores booleanos, no hace falta poner (=== true) o (=== false), es recomendable poner sin el true y en el false con operador de comparación)
+
+!alive ? console.log('Estoy vivo') : console.log('No estoy vivo');
+
+// Cuando son variables sin definir
+let iExist = alive ? 'SI' : 'NO';
 ```
 
 # Manejo del DOM con JavaScript
 
-### SELECCIONAR ELEMENTOS DEL DOM: 
+### SELECCIONAR ELEMENTOS DEL DOM:
 
 -- MÉTODOS TRADICIONALES DEL DOM:
 
@@ -102,17 +151,17 @@ document.querySelector('body').innerHTML = `
 - getElementsByTagName(tagName) <- Busca etiquetas HTML `tag` si no encuentra devuelve un array vacío.
 
 ```javascript
-const page = document.getElementById('page') // <- <div id="page">...</div>
+const page = document.getElementById('page'); // <- <div id="page">...</div>
 
-const items = document.getElementsByClassName('item') // <- [div, div, div]
-console.log(items[0]) // <- Primer item encontrado: <div class="item">...</div>
-console.log(items.length) // <- 3
+const items = document.getElementsByClassName('item'); // <- [div, div, div]
+console.log(items[0]); // <- Primer item encontrado: <div class="item">...</div>
+console.log(items.length); // <- 3
 
 //Obtiene todos los elementos con el atributo `name` a `value` igual a `nickname`
-const NICK_NAMES = document.getElementsByName('nickname') // <- [input]
+const NICK_NAMES = document.getElementsByName('nickname'); // <- [input]
 
 //Obtiene todos los elementos <div> de la página
-const DIVS = document.getElementsByTagName('div') // <- [div, div, div]
+const DIVS = document.getElementsByTagName('div'); // <- [div, div, div]
 ```
 
 -- MÉTODOS MODERNOS:
@@ -121,38 +170,38 @@ const DIVS = document.getElementsByTagName('div') // <- [div, div, div]
 - querySelectorAll(selector) <- Busca todos los elementos que coinciden con el selector CSS `selector`, si no encuentra devuelve un array vacío.
 
 ```javascript
-const PAGE = document.querySelector('#page') // <- <div id="page">...</div>
-const INFO = document.querySelectorAll('.main .info') // <- <div class="info">...</div>
+const PAGE = document.querySelector('#page'); // <- <div id="page">...</div>
+const INFO = document.querySelectorAll('.main .info'); // <- <div class="info">...</div>
 
 // Obtiene todos los elementos con la clase `info`
-const INFOS = document.querySelectorAll('.info')
+const INFOS = document.querySelectorAll('.info');
 
 //Obtiene todos los elementos con el atributo `name = nickname`
-const NICK_NAMES = document.querySelectorAll('[name="nickname"]')
+const NICK_NAMES = document.querySelectorAll('[name="nickname"]');
 
 //Obtiene todos los elementos <div> de la página HTML
-const DIVS = document.querySelectorAll('div')
+const DIVS = document.querySelectorAll('div');
 ```
 
 -- BÚSQUEDAS ACORTADAS: Al realizar una búsqueda de un elemento particular y guardarlo en una variable o constante, podemos volver a realizar una nueva búsqueda posteriormente sobre este elemento, en lugar del DOM integro `document`.
 
 ```javascript
-const MENU = document.querySelector('#menu')
-const LINKS = MENU.querySelectorAll('a')
+const MENU = document.querySelector('#menu');
+const LINKS = MENU.querySelectorAll('a');
 
 //Si controlamos un poco de CSS, se puede hacer lo siguiente:
-const LINKS = document.querySelectorAll('#menu a')
+const LINKS = document.querySelectorAll('#menu a');
 ```
 
 -- NODELIST O HTMLCOLLECTION: Los métodos de búsqueda generalmente devuelven un tipo de dato HTMLCollection o NodeList, que son listas de elementos HTML.
 
 ```javascript
-const ELEMENTS = document.querySelectorAll('div')
-ELEMENTS.map // <- undefined
+const ELEMENTS = document.querySelectorAll('div');
+ELEMENTS.map; // <- undefined
 
 // Destructuración de arrays
-const ELEMENTS = [...document.querySelectorAll('div')]
-ELEMENTS.map // <- f map() { [native code] }
+const ELEMENTS = [...document.querySelectorAll('div')];
+ELEMENTS.map; // <- f map() { [native code] }
 ```
 
 ### CREAR ELEMENTOS DEL DOM: ...
