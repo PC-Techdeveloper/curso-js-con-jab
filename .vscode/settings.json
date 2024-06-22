@@ -211,6 +211,7 @@
   "zenMode.fullScreen": true,
   "oneDarkPro.bold": true,
   "oneDarkPro.vivid": true,
-  "editor.fontSize": 14,
-  "editor.cursorStyle": "line"
+  "editor.fontSize": 16,
+  "editor.cursorStyle": "line",
+  "editor.lineHeight": 28
 }
