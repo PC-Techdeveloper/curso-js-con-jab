@@ -67,15 +67,88 @@ console.log(result4) // My name is Javier and my age is 18 years old. I was born
 ```
 
 ## Contenido HTML (Contenido dinámico con JavaScript)
+
 -- Contenido dinámico en HTML: InnerHTML sirve para modificar el contenido de un elemento HTML.
 -- querySelctor: Permite seleccionar un elemento HTML en el DOM.
 -- innerHTML: Permite modificar el contenido de un elemento HTML.
 -- createElement: Permite crear un nuevo elemento HTML.
 -- appendChild: Permite añadir un nuevo elemento HTML a un elemento existente.
 
-```javascript	
+```javascript
 document.querySelector('body').innerHTML = `
 <div>Mi nombre es <span class="nombre">${name}</span></div>
 <div>Mi edad es <span class="edad">${age}</span></div>
 <img class='img' src="${imagen}" alt="Una foto de Jefferson, laborando en la COMPUTERIA">`
+```
+
+# Operadores y expresiones
+
+```javascript
+//Operador de asignación <- =
+//Operadores de asignación compuesta <- +=, -=, *=, /=, %=, **=
+//Incremento y decremento .<- ++, --
+//Operadores de comparación <, >, <=, >=
+```
+
+# Manejo del DOM con JavaScript
+
+-- MÉTODOS TRADICIONALES DEL DOM:
+
+- getElementById(id) <- Busca el elemento HTML por su id, si no encuentra devuelve Null.
+- getElementsByClassName(className) <- Busca todos los elementos con la clase `class`, si no encuentra devuelve un array vacío.
+- getElementsByName(name) <- Busca elementos con el atributo `name` a `value`, si no encuentra devuelve un array vacío.
+- getElementsByTagName(tagName) <- Busca etiquetas HTML `tag` si no encuentra devuelve un array vacío.
+
+```javascript
+const page = document.getElementById('page') // <- <div id="page">...</div>
+
+const items = document.getElementsByClassName('item') // <- [div, div, div]
+console.log(items[0]) // <- Primer item encontrado: <div class="item">...</div>
+console.log(items.length) // <- 3
+
+//Obtiene todos los elementos con el atributo `name` a `value` igual a `nickname`
+const NICK_NAMES = document.getElementsByName('nickname') // <- [input]
+
+//Obtiene todos los elementos <div> de la página
+const DIVS = document.getElementsByTagName('div') // <- [div, div, div]
+```
+
+-- MÉTODOS MODERNOS:
+
+- querySelector(selector) <- Busca el primer elemento que coincide con el selector CSS `selector`, si no encuentra devuelve Null.
+- querySelectorAll(selector) <- Busca todos los elementos que coinciden con el selector CSS `selector`, si no encuentra devuelve un array vacío.
+
+```javascript
+const PAGE = document.querySelector('#page') // <- <div id="page">...</div>
+const INFO = document.querySelectorAll('.main .info') // <- <div class="info">...</div>
+
+// Obtiene todos los elementos con la clase `info`
+const INFOS = document.querySelectorAll('.info')
+
+//Obtiene todos los elementos con el atributo `name = nickname`
+const NICK_NAMES = document.querySelectorAll('[name="nickname"]')
+
+//Obtiene todos los elementos <div> de la página HTML
+const DIVS = document.querySelectorAll('div')
+```
+
+-- BÚSQUEDAS ACORTADAS: Al realizar una búsqueda de un elemento particular y guardarlo en una variable o constante, podemos volver a realizar una nueva búsqueda posteriormente sobre este elemento, en lugar del DOM integro `document`.
+
+```javascript
+const MENU = document.querySelector('#menu')
+const LINKS = MENU.querySelectorAll('a')
+
+//Si controlamos un poco de CSS, se puede hacer lo siguiente:
+const LINKS = document.querySelectorAll('#menu a')
+```
+
+-- NODELIST O HTMLCOLLECTION: Los métodos de búsqueda generalmente devuelven un tipo de dato HTMLCollection o NodeList, que son listas de elementos HTML.
+
+```javascript
+const ELEMENTS = document.querySelectorAll('div')
+ELEMENTS.map // <- undefined
+
+// Destructuración de arrays
+const ELEMENTS = [...document.querySelectorAll('div')]
+ELEMENTS.map // <- f map() { [native code] }
 ```
