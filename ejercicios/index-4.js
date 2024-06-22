@@ -1,5 +1,5 @@
 let user = 'Jab'
-let phurchasedProduct = 1
+let phurchasedProduct = 0
 const DISCOUNT = 0.1
 
 let discointPrice
@@ -14,7 +14,7 @@ const PRODUCTS = [
   {
     product: 'Cap',
     price: 5,
-    size: 'S',
+    size: 's',
     img: '../assets/cap.png',
   },
 ]
@@ -27,8 +27,8 @@ document.querySelector('body').innerHTML = `
       <div>
         <strong> Precio final: ${calculatePrice()} € </strong>
       </div>
-      <div>Talla: <strong>${PRODUCTS[phurchasedProduct].size}</strong></div>
-      <img class='cap' src="../assets/cap.png" alt="Una foto de una gorra" />
+      <div>Talla: <strong>${PRODUCTS[phurchasedProduct].size.toUpperCase()}</strong></div>
+      <img class='cap' src="${PRODUCTS[phurchasedProduct].img}" alt="Cap">
 </section>`
 
 function calculateDiscount() {
