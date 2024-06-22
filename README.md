@@ -129,9 +129,10 @@ false || true <- true
 false || false <- false
 */
 
-firstName === 'Jab' && age >= 18 ? console.log('Soy Jab') : console.log('No soy Jab');
+//Ley de precedencia <- Indica el orden de los operadores en JavaScript (AND, OR)
+firstName === 'Jab' || (age >= 18 && heads === 1) ? console.log('Soy Jab') : console.log('No soy Jab');
 
-// Cuando se comparan con valores booleanos, no hace falta poner (=== true) o (=== false), es recomendable poner sin el true y en el false con operador de comparación)
+// Cuando se comparan con valores booleanos, no hace falta poner (=== true) o (=== false), es recomendable poner sin el true y en el false con operador de comparación).
 
 !alive ? console.log('Estoy vivo') : console.log('No estoy vivo');
 
