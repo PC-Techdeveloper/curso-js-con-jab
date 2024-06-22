@@ -38,3 +38,12 @@ div {
   border-radius: 50%;
   margin-bottom: 16px;
 }
+
+input,
+div {
+  font-size: 2em;
+  padding: 4px 12px;
+  border-radius: 7px;
+  border: 2px solid #ccc;
+  outline: none;
+}

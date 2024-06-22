@@ -16,13 +16,40 @@ Las variables locales son variables que se pueden acceder solo desde el ámbito 
 -- Scope: Alcance de variables:
 El alcance de una variable es el ámbito en el que se puede acceder a ella. El alcance de una variable se puede determinar por su ubicación en el código y su propio tipo (Global o local).
 
-## Arrays de objetos:
+```javascript
+// Variables globales -> Fuera de una función o un bloque de código
+let nombre = 'Javier';
+let edad = 18;
+
+// Variables locales <- Dentro de una función
+function restar() {
+  let numero = 5;
+  let numero2 = 3;
+  return numero - numero2;
+}
+
+restar(); // 2
+```
+
+## ARRAYS DE OBJETOS:
 
 -- Los arrays de objetos son un tipo de objeto que contiene objetos, los objetos pueden ser de cualquier tipo. Los objetos que se almacenan en un array de objetos se llaman elementos del array.
 
 -- El valor de NaN (Not a Number): Es un valor especial que se utiliza para indicar que un valor no es numérico.
 
-## JavaScript es un lenguaje de tipado dinámico
+```javascript
+let array = [{1, 2, 3, 4, 5}];
+let array2 = [{1, 2, 3, 4, 5}];
+
+// Push <- Agrega un elemento al final de la lista
+array.push(6);
+array2.push(10);
+
+console.log(array); // [1, 2, 3, 4, 5, 6]
+console.log(array2); // [1, 2, 3, 4, 5, 10]
+```
+
+## JAVASCRIPT ES UN LENGUAJE DE TIPO DE DINÁMICO:
 
 Es un lenguaje de programación que se basa en el tipado dinámico, lo que significa que no es necesario indicar el tipo de datos de cada variable antes de utilizarla. En lugar de esto, el tipo de datos se inferencia automáticamente a partir de la información que se le proporciona al programa.
 
@@ -34,7 +61,7 @@ Es un lenguaje de programación que se basa en el tipado dinámico, lo que signi
 console.log(typeof $firstName);
 ```
 
-## Contenido dinámico en JavaScript:
+## CONTENIDO DINÁMICO EN JAVASCRIPT:
 
 -- 3 Tipos diferentes de comillas (Single, Double, Backtick)
 
@@ -50,7 +77,7 @@ let result2 = 'My name is ' + name2 + ' y mi edad es ' + age;
 let result3 = `My name is ${name3} y mi edad es ${age}`;
 ```
 
-## Uso de las funciones con la interpolación de strings:
+## USO DE LAS FUNCIONES CON LA INTERPOLACION DE STRINGS:
 
 ```javascript
 let name = 'Javier';
@@ -66,7 +93,7 @@ let result4 = `My name is ${name} and my age is ${age} years old. I was born in 
 console.log(result4); // My name is Javier and my age is 18 years old. I was born in 1994
 ```
 
-## Contenido HTML (Contenido dinámico con JavaScript)
+# CONTENIDO HTML (Contenido dinámico con JavaScript)
 
 -- Contenido dinámico en HTML: InnerHTML sirve para modificar el contenido de un elemento HTML.
 -- querySelctor: Permite seleccionar un elemento HTML en el DOM.
@@ -81,7 +108,7 @@ document.querySelector('body').innerHTML = `
 <img class='img' src="${imagen}" alt="Una foto de Jefferson, laborando en la COMPUTERIA">`;
 ```
 
-# Operadores y Expresiones
+# OPERADORES Y EXPRESIONES:
 
 ```javascript
 //Operador de asignación <- =
@@ -105,9 +132,9 @@ console.log(numero1 >= numero2);
 console.log(numero1 <= numero2);
 ```
 
-# Operadores Ternarios: (Condición) ? true : false
+# OPERADORES TERNARIOS: (Condición) ? true : false
 
-# Operadores Lógicos: &&(AND), ||(OR)
+# OPERADORES LÓGICOS: &&(AND), ||(OR)
 
 ```javascript
 let firstName = 'Jacobo';
@@ -140,7 +167,89 @@ firstName === 'Jab' || (age >= 18 && heads === 1) ? console.log('Soy Jab') : con
 let iExist = alive ? 'SI' : 'NO';
 ```
 
-# Manejo del DOM con JavaScript
+# FUNCIONES Y EVENTOS:
+
+- FUNCIONES: Las funciones permite ser reutilizables y modulares en el código, también como callbacks para llamar a funciones externas.
+
+```javascript
+const MI_NOMBRE = 'Jab';
+const IVA = 0.21;
+let cantidad = 2;
+let precio = 4;
+saludar();
+
+// EVENTOS:
+
+//¿Quién va dirigido la orden?
+//¿Qué evento se va a ejecutar?
+//Función que se va a ejecutar
+
+document.querySelector('.boton1').onclick = saludar;
+document.querySelector('.boton2').addEventListener('click', calcularIva);
+
+function saludar() {
+  console.log(valor);
+  escribir(`Hola ${MI_NOMBRE}`);
+  document.querySelector('.caja').innerHTML += `<button class="boton3">Aceptar</button>`;
+  document.querySelector('.boton3').onclick = saludar;
+}
+
+//Enviar valores a una función <- Parámetros
+function calcularIva() {
+  escribir(precio * cantidad * IVA);
+}
+
+function escribir(valor) {
+  document.querySelector('.caja').innerHTML += `<div>${valor}</div>`;
+}
+
+//---------------------------------------------------------
+escribir(calcularIva(cantidad * precio, cantidad, precio, IVA)); // Callback
+
+function saludar() {
+  escribir(`Hola ${MI_NOMBRE}`);
+}
+
+//Enviar valores a una función <- Parámetros
+// Función con return
+function calcularIva(resultado, cantidad, precio, IVA) {
+  let result = resultado * IVA; // Solo devuelve un valor
+  // Devuelve un objeto con dos propiedades
+  let suma = cantidad + precio;
+  return {
+    resultado: result,
+    suma: suma,
+  };
+}
+
+function escribir(valor) {
+  let primerValor = valor.resultado;
+  let segundoValor = valor.suma;
+  document.querySelector('.caja').innerHTML += `<div>${primerValor} (${segundoValor})</div>`;
+}
+```
+
+# EVENTOS DE TECLADO:
+
+
+
+
+```javascript
+
+
+
+```
+
+
+
+
+
+
+
+
+
+
+# MANEJO DEL DOM EN JAVASCRIPT
 
 ### SELECCIONAR ELEMENTOS DEL DOM:
 
