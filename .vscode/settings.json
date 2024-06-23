@@ -211,6 +211,6 @@
   "oneDarkPro.bold": true,
   "oneDarkPro.vivid": true,
   "editor.fontSize": 13.8,
-  "editor.cursorStyle": "line",
+  "editor.cursorStyle": "block",
   "editor.fontFamily": "Cascadia Code"
 }
