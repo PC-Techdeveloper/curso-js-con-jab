@@ -259,6 +259,17 @@ function teclado(e) {
 }
 ```
 
+# TODO SOBRE LOS INPUTS:
+```javascript
+
+
+
+
+
+```
+
+
+
 # MANEJO DEL DOM EN JAVASCRIPT
 
 ### SELECCIONAR ELEMENTOS DEL DOM:

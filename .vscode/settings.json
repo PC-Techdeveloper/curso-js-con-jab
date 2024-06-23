@@ -210,7 +210,7 @@
   "zenMode.fullScreen": true,
   "oneDarkPro.bold": true,
   "oneDarkPro.vivid": true,
-  "editor.fontSize": 14.8,
+  "editor.fontSize": 13.8,
   "editor.cursorStyle": "line",
   "editor.fontFamily": "Cascadia Code"
 }
