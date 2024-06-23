@@ -231,23 +231,18 @@ function escribir(valor) {
 
 # EVENTOS DE TECLADO:
 
-
-
-
 ```javascript
+/*
+keydown <- Se ejecuta cuando se presiona una tecla en el teclado.
+keyup <- Se ejecuta cuando se deja de presionar una tecla en el teclado.
+keypress <- Se ejecuta cuando se presiona una tecla en el teclado.
+*/
 
-
-
+//e.key <- Obtiene toda la información del evento
+function escribir(e) {
+  e.key === 'Enter' ? alert('Has pulsado la tecla "ENTER"') : null;
+}
 ```
-
-
-
-
-
-
-
-
-
 
 # MANEJO DEL DOM EN JAVASCRIPT
 
