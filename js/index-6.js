@@ -1,5 +1,11 @@
 let nombre;
 document.querySelector('.boton').addEventListener('click', leer);
+document.querySelector('#campo').addEventListener('keydown', teclado);
+
+// Dectectando la tecla "ENTER"
+function teclado(e) {
+  e.key === 'Enter' && leer();
+}
 
 // .value <- Obtiene el valor del input
 // innerHTML <- Escribir contenido HTML en el documento web
