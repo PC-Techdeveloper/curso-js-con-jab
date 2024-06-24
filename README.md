@@ -503,10 +503,77 @@ Ejemplo:
 
 ** Un atributo id.
 ** Tres clases: info, data, dark.
-** Un método HTML: data-number (También es un atributo).
+\*\* Un método HTML: data-number (También es un atributo).
 
 ```html
 <div id="page" class="info data dark" data-number="5"></div>
 ```
 
+-- Acceder a clases CSS:
 
+```javascript
+const element = document.querySelector("#page");
+
+// ¿Qué clases tiene?
+element.classList;              // ["info", "data", "dark"] (DOMTokenList)
+element.classList.value;        // "info data dark" (String)
+element.classList.length;       // 3
+
+// Convertirlas a array
+Array.from(element.classList)   // ["info", "data", "dark"] (Array)
+[...element.classList];         // ["info", "data", "dark"] (Array)
+
+// Consultarlas
+element.classList.item(0);      // "info"
+element.classList.item(1);      // "data"
+element.classList.item(3);      // null
+```
+
+-- Añadir y eliminar clases CSS:
+
+```javascript
+const element = document.querySelector('#page');
+
+element.classList.add('uno', 'dos');
+element.classList; // ["info", "data", "dark", "uno", "dos"]
+
+element.classList.remove('uno', 'dos');
+element.classList; // ["info", "data", "dark"]
+```
+
+-- Comprobar si existen clases CSS:
+
+```javascript
+const element = document.querySelector('#page');
+
+element.classList; // ["info", "data", "dark"]
+element.classList.contains('info'); // Devuelve `true` (existe esa clase)
+element.classList.contains('warning'); // Devuelve `false` (no existe esa clase)
+```
+
+-- Conmutar o alternar clases CSS:
+
+```javascript
+const element = document.querySelector('#page');
+
+element.classList; // ["info", "data", "dark"]
+
+element.classList.toggle('info'); // Como "info" existe, lo elimina. Devuelve "false"
+element.classList; // ["data", "dark"]
+
+element.classList.toggle('info'); // Como "info" no existe, lo añade. Devuelve "true"
+element.classList; // ["info", "data", "dark"]
+```
+
+-- Reemplazar una clase CSS:
+
+```javascript
+const element = document.querySelector('#page');
+
+element.classList; // ["info", "data", "dark"]
+
+element.classList.replace('dark', 'light'); // Devuelve `true` (se hizo el cambio)
+element.classList.replace('warning', 'error'); // Devuelve `false` (no existe warning)
+```
+
+## CONTENIDO EN EL DOM
