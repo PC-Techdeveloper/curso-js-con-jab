@@ -260,15 +260,10 @@ function teclado(e) {
 ```
 
 # TODO SOBRE LOS INPUTS:
+
 ```javascript
 
-
-
-
-
 ```
-
-
 
 # MANEJO DEL DOM EN JAVASCRIPT
 
@@ -336,3 +331,34 @@ ELEMENTS.map; // <- f map() { [native code] }
 ```
 
 ### CREAR ELEMENTOS DEL DOM: ...
+
+-- createElement(tag, options) <- Crea y devuelve el elemento HTML definido por el `string` tag.
+-- createComment(text) <- Crea y devuelve un nodo de comentarios HTML <!-- text -->.
+-- createTextNode(text) <- Crea y devuelve un nodo HTML con el texto `text`.
+-- cloneNode(deep) <- Clona el nodo HTML y devuelve una copia. `deep` es false por defecto.
+--- isConnected <- Indica si el nodo HTML está insertado en el documento HTML.
+
+1. Método .createElement():
+
+```html
+<div class'container'>
+  <p>Párrafo 1</p> -> <p>...</p>
+</div>
+```
+
+```javascript
+//DOM (Document Object Model)
+
+//Creamos un p
+const p = document.createElement('p');
+//Creamos un div
+const div = document.createElement('div');
+//Creamos un span
+const span = document.createElement('span');
+//Creamos un img
+const img = document.createElement('img');
+//Creamos un comentario
+const comment = document.createElement('comentario');
+//Creamos un nodo de texto
+const text = document.createElement('hola');
+```
