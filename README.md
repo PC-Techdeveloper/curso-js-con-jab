@@ -362,3 +362,17 @@ const comment = document.createElement('comentario');
 //Creamos un nodo de texto
 const text = document.createElement('hola');
 ```
+
+2. Método .cloneNode():
+   Para evitar que se cree una referencia, y duplicar el elemento, debemos usar el método .cloneNode()
+
+```javascript
+const div = document.createElement('div');
+div.textContent = 'Elemento 1';
+
+// Ahora sí estamos duplicando
+const div2 = div.cloneNode();
+div2.textContent = 'Elemento 2';
+
+div.textContent; // 'Elemento 1'
+```
