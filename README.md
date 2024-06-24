@@ -483,3 +483,30 @@ div.setAttribute('class', 'element shine light-theme');
 ```
 
 - La propiedad classList
+
+A. Obtener información:
+
+-- .classList -> Devuelve la lista de clases del elemento HTML.
+-- .classList.length -> Devuelve el número de clases del elemento HTML.
+-- .classList.item(n) -> Devuelve la clase número `n` del elemento HTML. Null si no existe.
+-- .classList.contains(clase) -> Indica si la clase existe en el elemento HTML.
+
+B. Acciones sobre clases:
+
+-- .classList.add(c1, c2) -> Añade las clases c1, c2... al elemento HTML.
+-- .classList.remove(c1, c2) -> Elimina las clases c1, c2... del elemento HTML.
+-- .classList.toggle(clase) -> Si la clase no existe, la añade. Si no, la elimina.
+-- .classList.toggle(clase, expr) -> Si expr es true, añade la clase. Si es false, la elimina.
+-- .classList.replace(old, new) -> Reemplaza la clase old por la clase new.
+
+Ejemplo:
+
+** Un atributo id.
+** Tres clases: info, data, dark.
+** Un método HTML: data-number (También es un atributo).
+
+```html
+<div id="page" class="info data dark" data-number="5"></div>
+```
+
+
