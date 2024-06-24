@@ -376,3 +376,110 @@ div2.textContent = 'Elemento 2';
 
 div.textContent; // 'Elemento 1'
 ```
+
+## GESTIONAR ATRIBUTOS DEL DOM
+
+-- Acceder a atributos HTML: Asignarle valores como propiedades de objetos
+
+```javascript
+// <div class='container'></div>
+const element = document.createElement('div');
+// <div id='page' class='container'></div>
+element.id;
+// <div id='page' class='container' style='color: red'></div>
+element.style = 'color: red';
+// <div id='page' class='data' style='color: red'></div>
+element.className = 'data';
+```
+
+-- Obtener atributos HTML:
+
+- hasAttributes() -> Indica si el elemento tiene atributos HTML.
+- hasAttribute(attr) -> Indica si el elemento tiene el atributo HTML `attr`.
+- getAttributeNames() -> Devuelve un `Array` con los atributos del elemento.
+- getAttribute(attr) -> Devuelve el valor del atributo `attr` del elemento o Null si no existe.
+
+```html
+<div id="page" class="info data dark" data-number="5"></div>
+```
+
+```javascript
+const element = document.querySelector('#page');
+
+element.hasAttributes(); // true (tiene 3 atributos)
+element.hasAttribute('data-number'); // true (data-number existe)
+element.hasAttribute('disabled'); // false (disabled no existe)
+
+element.getAttributeNames(); // ["id", "data-number", "class"]
+element.getAttribute('id'); // "page"
+```
+
+-- Modificar o eliminar atributos HTML:
+
+- setAtribute(attr, value) -> Añade o cambia el atributo attr al valor value del elemento HTML.
+- toggleAttribute(attr, force) -> Añade atributo attr si no existe, si existe lo elimina.
+- removeAttribute(attr) -> Elimina el atributo attr del elemento HTML.
+
+```html
+<div id="page" class="info data dark" data-number="5"></div>
+```
+
+```javascript
+const element = document.querySelector('#page');
+
+element.setAttribute('data-number', '10'); // Cambiar data-number a 10
+element.removeAttribute('id'); // Elimina el atributo id
+element.setAttribute('id', 'page'); // Vuelve a añadirlo
+```
+
+-- Caso especial: ATRIBUTOS BOOLEANOS
+
+Podemos establecer atributos HTML que son `booleanos`, es decir, que no tienen indicado ningún valor.
+
+```javascript
+const button = document.querySelector('button');
+
+button.setAttribute('disabled', true); // ❌ <button disabled="true">Clickme!</button>
+button.disabled = true; // ✅ <button disabled>Clickme!</button>
+button.setAttribute('disabled', ''); // ✅ <button disabled>Clickme!</button>
+```
+
+Normalmente, el método .toggleAttribute(attr, force) es más sencillo para estos casos. Añade el atributo que le pasas por parámetro si no existe, y lo elimina si ya existe:
+
+```javascript
+button.toggleAttribute('disabled'); // Como ya existe "disabled", lo elimina
+button.toggleAttribute('hidden'); // Como no existe "hidden", lo añade
+```
+
+Si se le proporciona el boolean `force`, si es verdadero: añade el atributo, si es falso: elimina el atributo.
+
+## LA API CLASSLIST DE JAVASCRIPT
+
+# MANIPULAR CLASES CSS DE UNA ETIQUETA HTML
+
+```html
+<div class="element shine dark-theme"></div>
+```
+
+1. La clase `element` seía la clase general que representa el elemento, y que tiene estilos fijos.
+2. La clase `shine` podría tener una animación CSS para aplicar un efecto de brillo.
+3. La clase `dark-theme` podría tener los estilos de un elemento en un tema oscuro.
+
+- La propiedad .className:
+
+-- .className -> Acceso directo al valor del atributo HTML `class`. También se puede asignar.
+-- .classList -> Objeto especial para manejar clases CSS. Contiene métodos y propiedades de ayuda.
+
+```javascript
+const div = document.querySelector('.element');
+
+// Obtener clases CSS
+div.className; // "element shine dark-theme"
+div.getAttribute('class'); // "element shine dark-theme"
+
+// Modificar clases CSS
+div.className = 'element shine light-theme';
+div.setAttribute('class', 'element shine light-theme');
+```
+
+- La propiedad classList
