@@ -10,7 +10,6 @@
   "workbench.fontAliasing": "antialiased",
   "workbench.iconTheme": "symbols",
   "workbench.list.smoothScrolling": true,
-  "workbench.preferredDarkColorTheme": "One Dark Pro Darker",
   "workbench.preferredLightColorTheme": "One Dark Pro Darker",
   "workbench.productIconTheme": "fluent-icons",
   "workbench.startupEditor": "newUntitledFile",
@@ -182,7 +181,6 @@
   "breadcrumbs.enabled": false,
   "editor.smoothScrolling": true,
   "terminal.integrated.smoothScrolling": true,
-  "files.autoSave": "afterDelay",
   "symbols.hidesExplorerArrows": false,
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -191,26 +189,59 @@
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "terminal.integrated.defaultProfile.windows": "Git Bash",
-  "editor.minimap.enabled": false,
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
   "[javascriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "terminal.integrated.fontSize": 16,
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnPaste": true,
-  "editor.formatOnSave": true,
   "workbench.editor.enablePreview": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "editor.fontLigatures": true,
-  "workbench.sideBar.location": "right",
   "zenMode.fullScreen": true,
-  "oneDarkPro.bold": true,
+  "explorer.confirmPasteNative": false,
+  "supermaven.enable": {
+    "*": false
+  },
+  "terminal.integrated.fontSize": 15,
+  "editor.fontSize": 14,
+  "editor.fontFamily": "Cascadia Code",
+  "terminal.integrated.fontFamily": "JetBrains Mono",
+  "editor.cursorStyle": "line",
+  "editor.formatOnSave": true,
+  "window.zoomLevel": 1.1,
+  "editor.minimap.maxColumn": 40,
+  "workbench.preferredDarkColorTheme": "One Dark Pro Darker",
+  "editor.scrollbar.vertical": "hidden",
+  "editor.scrollbar.horizontal": "hidden",
+  "editor.cursorBlinking": "expand",
+  "workbench.sideBar.location": "right",
+  "editor.glyphMargin": false,
   "oneDarkPro.vivid": true,
-  "editor.fontSize": 13.8,
-  "editor.cursorStyle": "block",
-  "editor.fontFamily": "Cascadia Code"
+  "oneDarkPro.bold": true,
+  "git.openRepositoryInParentFolders": "always",
+  "[astro]": {
+    "editor.defaultFormatter": "astro-build.astro-vscode"
+  },
+  "terminal.integrated.profiles.windows": {
+    "PowerShell": {
+      "source": "PowerShell",
+      "icon": "terminal-powershell"
+    },
+    "Command Prompt": {
+      "path": ["${env:windir}\\Sysnative\\cmd.exe", "${env:windir}\\System32\\cmd.exe"],
+      "args": [],
+      "icon": "terminal-cmd"
+    },
+    "Git Bash": {
+      "source": "Git Bash"
+    },
+    "Windows PowerShell": {
+      "path": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+    }
+  },
+  "files.autoSave": "afterDelay"
 }
